@@ -4,7 +4,7 @@ import { ArtContext } from '../../context/ArtContext';
 import RemoveIcon from '@mui/icons-material/Remove';
 
 const CartItems = () => {
-    const {all_product,cartItems,removeFromCart} = useContext(ArtContext);
+    const {getTotalCartAmount,all_product,cartItems,removeFromCart} = useContext(ArtContext);
   return (
     <div className='cartitems'>
         <div className="cartitems-format-main">
@@ -21,7 +21,7 @@ const CartItems = () => {
                 {
                    return <div>
                    <div className="cartitems-format cartitems-format-main">
-                       <img className='carticon-product-icon' src={e.image} alt="" />
+                       <img className='carticon-product-icon' src={e.image} alt=""  style={{ height: '62px', width: 'auto', maxWidth: '100%' }}/>
                        <p>{e.name}</p>
                        <p>{e.new_price}</p>
                        <button className='cartitems-quantity'>{cartItems[e.id]}</button>
@@ -31,7 +31,37 @@ const CartItems = () => {
                    <hr/>
                    </div>
                 }
+                return null;
             })}
+            <div className="cartitem-down">
+                <div className="cartitem-total">
+                    <h1>cart Totals</h1>
+                    <div>
+                        <div className="cartitem-total-items">
+                            <p>Subtotal</p>
+                            <p>₹{getTotalCartAmount()}</p>
+                        </div>
+                        <hr />
+                        <div className="cartitem-total-items">
+                            <p>Shipping Fee</p>
+                            <p>Free</p>
+                        </div>
+                        <hr />
+                        <div className="cartitem-total-items">
+                            <h3>Total</h3>
+                            <h3>₹{getTotalCartAmount()}</h3>
+                        </div>
+                    </div>
+                    <button>PROCEED TO CHECKOUT</button>
+                </div>
+                <div className="cartitem-promocode">
+                    <p>If you have promo code , Enter it here</p>
+                    <div className="cartitem-promobox">
+                        <input type="text"  placeholder='promo code'/>
+                        <button>Submit</button>
+                    </div>
+                </div>
+            </div>
         </div>
   )
 }

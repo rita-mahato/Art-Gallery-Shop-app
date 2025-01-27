@@ -123,12 +123,16 @@
 }
 .artcategory-products{
     width: 90%;
-    margin: 10px auto;
+    /* margin: 10px auto; */
     row-gap: 40px;
     margin: 20px 170px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    row-gap: 80px;
+    row-gap: 30px;
+    /* margin-left: 130px; */
+    /* margin-right: 10px; */
+    /* overflow-x: hidden; */
+    /* margin: 20px auto; */
 }
 .artcategory-products .item{
     margin: auto;
