@@ -36,7 +36,8 @@ function App() {
       {/* </div> */}
       {/* <Main/> */}
       <Routes>
-        <Route path='/' element={<Home/>}/>
+        <Route path='/' element={<Home />}/>
+        <Route path="/home" element={<Home />} />
         <Route path='/painting' element={<ArtCategory banner={painting_banner} category="painting"/>}/>
         <Route path='/photography' element={<ArtCategory banner={photography_banner} category="photography"/>}/>
         <Route path='/sculpture' element={<ArtCategory banner={sculpture_banner} category="sculpture"/>}/>
