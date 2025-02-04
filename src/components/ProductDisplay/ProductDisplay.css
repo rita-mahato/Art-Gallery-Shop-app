@@ -80,3 +80,8 @@
 .productdisplay-right-category span{
     font-weight: 700;
 }
+.cart-added-message {
+    color: green;
+    font-size: 14px;
+    margin-top: 5px;
+}
