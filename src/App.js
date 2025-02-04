@@ -11,6 +11,7 @@ import painting_banner from './components/Images/painting_banner.png';
 import photography_banner from './components/Images/photography_banner.png';
 import sculpture_banner from './components/Images/Sculpture2.png';
 import Product from './pages/Product';
+import SuccessPage from './components/SuccessPage/SuccessPage';
 // import { Main } from './components/Main/Main'
 // import { ImageSlider } from './components/ImageSlider/ImageSlider';
 // import { Images } from './components/Images'
@@ -46,6 +47,7 @@ function App() {
         </Route>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/login' element={<LoginSignup/>}/>
+        <Route path="/successPage" element={<SuccessPage />} />
       </Routes>
       <Footer/>
       </BrowserRouter>
