@@ -7,7 +7,7 @@ import n5 from './n5.png'
 let new_collections = [
     {
         id:1,
-        name: "Bird",
+        name: "painting",
         image: n1,
         new_price:850.00,
         old_price:1200.00,
@@ -23,7 +23,7 @@ let new_collections = [
     },
     {
         id:3,
-        name: "Birds",
+        name: "painting",
         image: n3,
         new_price:750.00,
         old_price:1100.00,
@@ -31,7 +31,7 @@ let new_collections = [
     },
     {
         id:4,
-        name: "Birds",
+        name: "painting",
         image: n4,
         new_price:750.00,
         old_price:1100.00,
@@ -39,7 +39,7 @@ let new_collections = [
     },
     {
         id:5,
-        name: "Birds",
+        name: "painting",
         image: n5,
         new_price:750.00,
         old_price:1100.00,
