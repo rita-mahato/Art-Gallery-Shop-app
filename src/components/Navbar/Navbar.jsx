@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState,useEffect  } from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom';
 // import shoppingIcon from '../Images/art_studio.png'
@@ -8,7 +8,25 @@ import { ArtContext } from '../../context/ArtContext';
 // import ColorLensIcon from '@mui/icons-material/ColorLens';
 export const Navbar = () => {
   const [menu,setMenu] = useState("home");
+  const [log, setLog] = useState("Login")
   const {getTotalCartItems} = useContext(ArtContext);
+
+  useEffect(() => {
+    const storedLoginStatus = localStorage.getItem("isLoggedIn");
+    if (storedLoginStatus === "true") {
+      setLog("Logout");
+    } else {
+      setLog("Login");
+    }
+  }, []);
+
+  const handleAuthClick = () => {
+    if (log === "Logout") {
+      localStorage.removeItem("isLoggedIn");
+      setLog("Login");
+    }
+  };
+
   return (
     <div className='navbar'>
         <ul className="nav-menu">
@@ -18,7 +36,9 @@ export const Navbar = () => {
             <li onClick={()=> {setMenu("sculpture")}}><Link style={{ textDecoration: 'none' }} to='/sculpture'>Sculpture</Link>{menu==="sculpture"?<hr/>:<></>}</li>
         </ul>
         <div className="nav-login-cart">
-            <Link to='/login'><button>Login</button></Link>
+            <Link to={log === "Login" ? '/login' : '/'} onClick={handleAuthClick}>
+              <button>{log}</button>
+            </Link>
             <Link to='/cart'><ShoppingCartIcon></ShoppingCartIcon></Link>
             <div className="nav-cart-count">{getTotalCartItems()}</div>
         </div>

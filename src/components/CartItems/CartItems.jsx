@@ -11,7 +11,6 @@ const CartItems = () => {
     const handleCheckout = () => {
         navigate('/SuccessPage');
     };
-
     return (
         <div className='cartitems'>
             <div className="cartitems-format-main">
@@ -73,7 +72,6 @@ const CartItems = () => {
         </div>
     );
 }
-
 export default CartItems;
 
 
